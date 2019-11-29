@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'\\vendor/autoload.php';
-require __DIR__.'/ContainerMxKQitN/App_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerLFrGE5W/App_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'App\Kernel';
@@ -129,6 +129,7 @@ $classes[] = 'Symfony\Component\VarDumper\Dumper\ContextProvider\RequestContextP
 $classes[] = 'Symfony\Component\VarDumper\Dumper\ContextProvider\CliContextProvider';
 $classes[] = 'Doctrine\Bundle\DoctrineBundle\Registry';
 $classes[] = 'Doctrine\DBAL\Logging\DebugStack';
+$classes[] = 'Symfony\Component\Cache\Adapter\ArrayAdapter';
 $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener';
 $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener';
 $classes[] = 'Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterManager';
