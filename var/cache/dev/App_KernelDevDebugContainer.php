@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerVniUCeF\App_KernelDevDebugContainer([
     'container.build_hash' => 'VniUCeF',
-    'container.build_id' => 'eb916164',
-    'container.build_time' => 1575223981,
+    'container.build_id' => 'ae2c271d',
+    'container.build_time' => 1575242984,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerVniUCeF');

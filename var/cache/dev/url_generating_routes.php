@@ -16,6 +16,6 @@ return [
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'app_index' => [[], ['_controller' => 'App\\Controller\\DefaultController::index'], [], [['text', '/']], [], []],
-    'wild_index' => [[], ['_controller' => 'App\\Controller\\WildController::index'], [], [['text', '/wild']], [], []],
-    'wild_show' => [['slug'], ['slug' => 'Aucune série sélectionnée, veuillez choisir une série', '_controller' => 'App\\Controller\\WildController::show'], ['slug' => '[a-z0-9\\-]+'], [['variable', '/', '[a-z0-9\\-]+', 'slug', true], ['text', '/wild/show']], [], []],
+    'wild_index' => [[], ['_controller' => 'App\\Controller\\WildController::index'], [], [['text', '/wild/']], [], []],
+    'wild_show' => [['slug'], ['slug' => 'noslug', '_controller' => 'App\\Controller\\WildController::show'], ['slug' => '\\b[a-z0-9\\-]+\\b'], [['variable', '/', '\\b[a-z0-9\\-]+\\b', 'slug', true], ['text', '/wild/show']], [], []],
 ];

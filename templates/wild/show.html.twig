@@ -2,11 +2,12 @@
 
 {% block body %}
 
-    <h1>{{ slug }}.</h1>
+    {% if result == "Noslug" %}
+        <h1>Aucune série sélectionnée, veuillez choisir une série.</h1>
+    {% else %}
+        <h1>{{ result }}</h1>
 
-    <h1>
-        <a href="{{ path('wild/show', {'slug': 'ma-superbe-serie'}) }}">Ma superbe série"</a>
-    </h1>
+
 {% endblock %}
 
 

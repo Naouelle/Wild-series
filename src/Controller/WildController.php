@@ -7,10 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/wild", name="wild_")
+ */
 class WildController extends AbstractController
 {
      /**
-     * @Route("/wild", name="wild_index")
+     * @Route("/", name="index")
      * @return Response
      */
     public function index(): Response
@@ -21,22 +24,14 @@ class WildController extends AbstractController
     }
 
     /**
-     * @Route("/wild/show/{slug}", requirements={"slug"="[a-z0-9\-]+"},
-     * name="wild_show",
-     * defaults={"slug"="Aucune série sélectionnée, veuillez choisir une série"})
+     * @Route("/show/{slug}", requirements={"slug"="\b[a-z0-9\-]+\b"}, name="show")
+     * @param string $slug
+     * @return Response
      */
-    public function show($slug): Response
+    public function show(string $slug = "noslug"): Response
     {
-        $noSeries = "Aucune série sélectionnée, veuillez choisir une série";
-        if ($slug =="") {
-            $slug = $noSeries;
-        } else {
-            $slug = str_replace('-', ' ', $slug);
-            $slug = ucwords($slug);
-        }
-        return  $this->render('wild/show.html.twig', [
-            'slug' => $slug
-        ]);
+        $result = str_replace("-", " ", ucwords($slug));
+        return $this->render('wild/show.html.twig', ['result' => $result]);
     }
 
     /**
