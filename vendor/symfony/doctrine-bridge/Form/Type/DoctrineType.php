@@ -50,7 +50,6 @@ abstract class DoctrineType extends AbstractType implements ResetInterface
      *
      * For backwards compatibility, objects are cast to strings by default.
      *
-     *
      * @internal This method is public to be usable as callback. It should not
      *           be used in user code.
      */
@@ -83,13 +82,16 @@ abstract class DoctrineType extends AbstractType implements ResetInterface
      * For instance in ORM two query builders with an equal SQL string and
      * equal parameters are considered to be equal.
      *
+     * @param object $queryBuilder A query builder, type declaration is not present here as there
+     *                             is no common base class for the different implementations
+     *
      * @return array|null Array with important QueryBuilder parts or null if
      *                    they can't be determined
      *
      * @internal This method is public to be usable as callback. It should not
      *           be used in user code.
      */
-    public function getQueryBuilderPartsForCachingHash(QueryBuilder $queryBuilder): ?array
+    public function getQueryBuilderPartsForCachingHash($queryBuilder): ?array
     {
         return null;
     }
@@ -143,8 +145,7 @@ abstract class DoctrineType extends AbstractType implements ResetInterface
                     $options['em'],
                     $options['class'],
                     $options['id_reader'],
-                    $entityLoader,
-                    false
+                    $entityLoader
                 );
 
                 if (null !== $hash) {

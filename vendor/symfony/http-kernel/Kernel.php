@@ -68,11 +68,11 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
 
     private static $freshCache = [];
 
-    const VERSION = '5.0.0';
-    const VERSION_ID = 50000;
+    const VERSION = '5.0.1';
+    const VERSION_ID = 50001;
     const MAJOR_VERSION = 5;
     const MINOR_VERSION = 0;
-    const RELEASE_VERSION = 0;
+    const RELEASE_VERSION = 1;
     const EXTRA_VERSION = '';
 
     const END_OF_MAINTENANCE = '07/2020';
@@ -433,8 +433,9 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
 
         try {
             if (file_exists($cachePath) && \is_object($this->container = include $cachePath)
-                && (!$this->debug || (self::$freshCache[$k = $cachePath.'.'.$this->environment] ?? self::$freshCache[$k] = $cache->isFresh()))
+                && (!$this->debug || (self::$freshCache[$cachePath] ?? $cache->isFresh()))
             ) {
+                self::$freshCache[$cachePath] = true;
                 $this->container->set('kernel', $this);
                 error_reporting($errorLevel);
 
@@ -458,7 +459,7 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
                     $cache = new class($cachePath, $this->debug) extends ConfigCache {
                         public $lock;
 
-                        public function write($content, array $metadata = null)
+                        public function write(string $content, array $metadata = null)
                         {
                             rewind($this->lock);
                             ftruncate($this->lock, 0);
