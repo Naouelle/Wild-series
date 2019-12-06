@@ -7,6 +7,7 @@
 
 // any CSS you require will output into a single css file (app.css in this case)
 require('../css/app.scss');
+require('../css/reset.css');
 
 const $ = require('jquery');
 // this "modifies" the jquery module: adding behavior to it

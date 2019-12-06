@@ -1,12 +1,20 @@
 {% extends 'base.htm.twig' %}
+{% block title %}{{ slug }}{% endblock %}
 
 {% block body %}
 
-    <h1>{{ slug }}.</h1>
+    <div class="media">
+        <img class="align-self-sm-start mr-3" src="{{ program.poster }}" alt="{{ program.title }} poster">
+        <div class="media-body">
+            <h1 class="mt-0">{{ program.title }}</h1>
+            <p>{{ program.summary }}</p>
+            <p>Categorie : {{ program.category.name }}</p>
+        </div>
+    </div>
 
-    <h1>
-        <a href="{{ path('wild/show', {'slug': 'ma-superbe-serie'}) }}">Ma superbe série"</a>
-    </h1>
+    <a href="{{ path('wild_index') }}">
+        Retour à l'accueil
+    </a>
 {% endblock %}
 
 
