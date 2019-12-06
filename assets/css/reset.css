@@ -1,48 +1,48 @@
-/ * http://meyerweb.com/eric/tools/css/reset/
-v2.0 | 20110126
-Licence: aucune (domaine public)
-* /
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
-html, body, div, span, applet, objet, iframe,
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-un, abbr, acronyme, adresse, grand, citer, code,
+a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-petite, grève, forte, sous, sup, tt, var,
+small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
-fieldset, formulaire, étiquette, légende,
-tableau, légende, tbody, tfoot, thead, tr, th, td,
-article, à part, toile, détails, intégrer,
-figure, figcaption, pied de page, en-tête, hgroup,
-menu, navigation, sortie, ruby, section, résumé,
-temps, marque, audio, vidéo {
-    marge: 0;
-    rembourrage: 0;
-    bordure: 0;
-    taille de police: 100%;
-    font: hériter;
-    alignement vertical: ligne de base;
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
-/ * Réinitialisation du rôle d'affichage HTML5 pour les anciens navigateurs * /
-article, à part, détails, figcaption, figure,
-pied de page, en-tête, hgroup, menu, nav, section {
-    bloc de visualisation;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
 }
-corps {
-    hauteur de ligne: 1;
+body {
+    line-height: 1;
 }
 ol, ul {
-    style de liste: aucun;
+    list-style: none;
 }
 blockquote, q {
-    citations: aucune;
+    quotes: none;
 }
-blockquote: before, blockquote: after,
-q: avant, q: après {
-    contenu: '';
-    contenu: aucun;
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
 }
 table {
-    effondrement de la bordure: effondrement;
-    espacement des bordures: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
