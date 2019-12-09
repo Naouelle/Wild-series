@@ -2,11 +2,12 @@
 {% block title %}Catégorie {{ categoryName }}{% endblock %}
 
 {% block body %}
-    <h2>Toutes les séries dans la catégorie {{ category.name }}</h2>
+    <div class="container-fluid">
+        <h1>Séries de la catégorie : {{ categoryName }} ({{ category.id }})</h1>
 
     {% for program in programs %}
     <div>
-        <h2>{{ loop.index }} / {{ program.title }} -  Catégorie : {{ program.category.name }}</h2>
+        <h2>{{ loop.index }} / {{ program.title }} -  Catégorie : {{ program.category }}</h2>
         <p>{{ program.summary }}</p>
         <img class="align-self-sm-start" src="{{ program.poster }}" alt="{{ program.title }} poster">
     </div>
